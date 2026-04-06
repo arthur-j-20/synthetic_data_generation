@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from graph_show import show_graph, scatter_income_spend
+from graph_show import income_histogram, age_distribution_graph, scatter_income_spend
 
 # Reproducibility: same random output each time
 rng = np.random.default_rng(42)
@@ -73,6 +73,11 @@ print(df.groupby("is_student")["income"].mean().round(2))
 print("\nAverage income by country:")
 print(df.groupby("country")["income"].mean().round(2))
 
-show_graph(df)
+print("showing graphs...")
+
+
+age_distribution_graph(df)
+
+income_histogram(df)
 
 scatter_income_spend(df)
